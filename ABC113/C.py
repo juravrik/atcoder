@@ -19,21 +19,3 @@ for k, v1 in py.items():
 for k, v in sorted(ans, key=lambda x:x[0]):
     print(v)
 
-"""
-ans=[]
-for i in range(1,m+1):
-    a = []
-    for j, v in enumerate(py):
-        if v[0] == i:
-            a.append([j, v[1]])
-
-    city="000000"+str(i)
-    city = city[-6:]
-    for j, v in enumerate(sorted(a, key=lambda x:x[1])):
-        num="000000"+str(j+1)
-        num=num[-6:]
-        ans.append([v[0], city+num])
-
-for i in sorted(ans, key=lambda x:x[0]):
-    print(i[1])
-"""
