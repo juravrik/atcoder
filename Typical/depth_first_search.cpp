@@ -7,13 +7,13 @@ bool reached[1000][1000];
 
 bool search(int x, int y){
 
-    if(x<0 || h <=x || y<0 || w <= y)return false;
+    if(x<0 || w <=x || y<0 || h <= y)return false;
 
-    if(c[x][y] == 'g')return true;
-    if(c[x][y] == '#' || reached[x][y])return false;
+    if(c[y][x] == 'g')return true;
+    if(c[y][x] == '#' || reached[y][x])return false;
 
 
-    reached[x][y] = true;
+    reached[y][x] = true;
 
     return (search(x+1, y) || search(x-1, y)) || (search(x, y+1) || search(x, y-1));
 }
@@ -26,8 +26,8 @@ int main(){
         for(int j=0; j<w; j++){
             cin >> c[i][j];
             if(c[i][j] == 's'){
-                x=i;
-                y=j;
+                x=j;
+                y=i;
             }
             reached[i][j] = false;
         }
